@@ -70,7 +70,7 @@ The game-detail route awaits its `slug`, loads the matching game, and creates a 
 
 Dependencies are pinned by `package-lock.json`. Use `npm ci` to install the locked versions.
 
-## Clone and run
+## Clone and run 
 
 Replace `<owner>` and `<repository>` with the GitHub account and repository name. For a private repository, the GitHub account must have access.
 
