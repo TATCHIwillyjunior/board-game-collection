@@ -76,7 +76,7 @@ Replace `<owner>` and `<repository>` with the GitHub account and repository name
 
 ```bash
 git clone https://github.com/<owner>/<repository>.git
-cd <repository>
+cd <repository> 'continue to cd until you reach board-game-collection'
 npm ci
 npm run dev
 ```
