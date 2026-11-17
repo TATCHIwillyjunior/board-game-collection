@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   games,
+  getGameDetails,
   getGameBySlug,
   getSessionsByGameSlug,
 } from "@/lib/games";
@@ -14,6 +15,8 @@ type GamePageProps = {
 export function generateStaticParams() {
   return games.map((game) => ({ slug: game.slug }));
 }
+
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
@@ -33,7 +36,7 @@ export async function generateMetadata({
 
 export default async function GameDetailsPage({ params }: GamePageProps) {
   const { slug } = await params;
-  const game = getGameBySlug(slug);
+  const game = await getGameDetails(slug);
 
   if (!game) {
     notFound();

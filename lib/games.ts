@@ -119,6 +119,13 @@ export function getGameBySlug(slug: string): BoardGame | undefined {
   return games.find((game) => game.slug === slug);
 }
 
+export async function getGameDetails(
+  slug: string,
+): Promise<BoardGame | undefined> {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  return getGameBySlug(slug);
+}
+
 export function getSessionsByGameSlug(gameSlug: string): PlaySession[] {
   return playSessions.filter((session) => session.gameSlug === gameSlug);
 }
